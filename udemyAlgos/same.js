@@ -1,13 +1,10 @@
 // write a function called same that takes two arrays
-// it should return true if every value in the first array has a square in the second
-//frequency of values must be the same
+// it should return true if every value in the first array
+// has a square in the second
+// frequency of values must be the same
 
 // my solution
 function same(arrA, arrB) {
-  // create obj to keep track of numbers seen
-  // store numbers from arrA in object with frequency as value
-  // loop through second array
-  // check if obj
   let squares = {};
   if (arrA.length !== arrB.length) {
     return false;
@@ -28,5 +25,46 @@ function same(arrA, arrB) {
   return true;
 }
 
-//Big O = O(n)
-// simplifies from n + n where n is the length of the strings
+//Big O = O(n) where n is length of the string
+
+//udemy's naive solution
+
+function sameTwo(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  for (let i = 0; i < arr1.length; i++) {
+    let correctIdx = arr2.indexOf(arr1[i] ** 2);
+    if (correctIdx === -1) {
+      return false;
+    }
+    arr2.splice(correctIdx, 1);
+  }
+  return true;
+}
+
+//udemy's optimized solution:
+
+function sameThree(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  let counter1 = {};
+  let counter2 = {};
+
+  for (let val of arr1) {
+    counter1[val] = ++counter1[val] || 1;
+  }
+  for (let val of arr2) {
+    counter2[val] = ++counter2[val] || 1;
+  }
+  for (let key in counter1) {
+    if (!(key ** 2 in counter2)) {
+      return false;
+    }
+    if (counter2[key ** 2] !== counter1[key]) {
+      return false;
+    }
+  }
+  return true;
+}
