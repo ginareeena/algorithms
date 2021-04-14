@@ -23,7 +23,7 @@ function countUniqueValuesLoop(arr) {
   return count;
 }
 
-// multiple pointers solution:
+// my solution with multiple pointers:
 
 function countUniqueValues(arr) {
   let i = 0;
@@ -55,10 +55,10 @@ function countUniqueValues(arr) {
   }
 }
 
-console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 5, 6, 7])); // 7 <- counts 4 once
-console.log(countUniqueValues([1, 2, 3, 5, 6, 7])); // 6 <- counts 4 once
-console.log(countUniqueValues([1, 2, 3, 4, 5, 6, 6, 7])); // 7 <- counts 4 once
+// console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 5, 6, 7])); // 7 <- counts 4 once
+// console.log(countUniqueValues([1, 2, 3, 5, 6, 7])); // 6 <- counts 4 once
+// console.log(countUniqueValues([1, 2, 3, 4, 5, 6, 6, 7])); // 7 <- counts 4 once
 
-console.log(countUniqueValuesLoop([1, 2, 3, 4, 4, 4, 5, 6, 7])); // 7
-console.log(countUniqueValuesLoop([1, 2, 3, 5, 6, 7])); // 6
-console.log(countUniqueValuesLoop([1, 2, 3, 4, 5, 6, 6, 7])); //
+// console.log(countUniqueValuesLoop([1, 2, 3, 4, 4, 4, 5, 6, 7])); // 7
+// console.log(countUniqueValuesLoop([1, 2, 3, 5, 6, 7])); // 6
+// console.log(countUniqueValuesLoop([1, 2, 3, 4, 5, 6, 6, 7])); //
