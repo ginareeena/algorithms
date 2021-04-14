@@ -2,33 +2,7 @@
 //unique values in an array
 //returns 0 if array is empty
 
-// attempt at pointers
-function countUniqueValues(arr) {
-  let seen = {};
-  let count = 0;
-  left = 0;
-  right = arr.length - 1;
-  if (arr.length === 0) {
-    return count;
-  }
-  while (left < right) {
-    if (!seen[left]) {
-      seen[left] = 1;
-      count++;
-    } else if (seen[left]) {
-      left++;
-    }
-    if (!seen[right]) {
-      seen[right] = 1;
-      count++;
-    } else if (seen[right]) {
-      right--;
-    }
-  }
-  return count;
-}
-
-// with a for of loop
+// My Solution with a for loop:
 // Big O= O(n) linear
 
 function countUniqueValuesLoop(arr) {
@@ -47,6 +21,38 @@ function countUniqueValuesLoop(arr) {
   }
 
   return count;
+}
+
+// multiple pointers solution:
+
+function countUniqueValues(arr) {
+  let i = 0;
+  let j = 1;
+
+  if (arr.length === 0) {
+    return i;
+  }
+
+  // example array:  1 1 2 3
+  // marks the next run through the loop
+
+  while (j < arr.length) {
+    let first = arr[i]; // 1* 1 2 3  // 1* 1 2 3  // 1 2* 2 3
+    let second = arr[j]; // 1 1* 2 3  // 1 1 2* 3  // 1 2 2 3*
+
+    if (first === second) {
+      j++; // 1 1 2* 3 // not equal // no equal (doesn't run)
+    } else if (first !== second) {
+      // equal  // 1* 1 2 3 !== 1 1 2* 3   // 1 2* 2 3 !== 1 2 2 3*
+      i++; // 1 1* 2 3  // 1 2 2* 3
+      arr[i] = arr[j]; //1 2* 2 3 // 1 2 3* 3
+      if (j === arr.length - 1) {
+        return i + 1; //return the index that i is at +1
+      } else {
+        j++; //1 2 2 3* //
+      }
+    }
+  }
 }
 
 console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 5, 6, 7])); // 7 <- counts 4 once
