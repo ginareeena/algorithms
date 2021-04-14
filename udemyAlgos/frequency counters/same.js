@@ -1,3 +1,5 @@
+//frequency counters
+
 // write a function called same that takes two arrays
 // it should return true if every value in the first array
 // has a square in the second

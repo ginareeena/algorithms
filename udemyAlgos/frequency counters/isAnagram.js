@@ -1,4 +1,6 @@
-//compare two strings and see if they consist of the same characters
+//frequency counters
+
+// compare two strings and see if they consist of the same characters
 // return true if they do (are anagrams)
 // false if they aren't
 
@@ -30,3 +32,23 @@ function isAnagram(str1, str2) {
 // console.log(isAnagram("at", "atc"))
 
 //optimizing: consider edge cases, non alpha numeric characters?
+
+//udemy's solution:
+
+function isValidAnagram(str1, str2) {
+  const lookup = {};
+  for (let i = 0; i < str1.length; i++) {
+    let letter = str1[i];
+    lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
+  }
+  for (let i = 0; i < str1.length; i++) {
+    let letter = str2[i];
+    if (!lookup[letter]) {
+      return false;
+    } else {
+      lookup[letter] -= 1;
+    }
+    // lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
+  }
+  return true;
+}

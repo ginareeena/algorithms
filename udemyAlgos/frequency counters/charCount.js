@@ -1,3 +1,5 @@
+//frequency counters
+
 //return a function that counts all the characters in a string
 // this uses regex to count only alphanumeric characters
 
