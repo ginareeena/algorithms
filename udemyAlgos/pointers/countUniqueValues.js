@@ -25,7 +25,7 @@ function countUniqueValuesLoop(arr) {
 
 //multiple pointers solution:
 
-// don't need to increment j in a for loop with j
+// initialize i, and create a for loop with j
 function countUniqueValuesAlt(arr) {
   let i = 0;
   if (arr.length === 1) {
