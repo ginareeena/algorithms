@@ -23,39 +23,7 @@ function countUniqueValuesLoop(arr) {
   return count;
 }
 
-// my solution with multiple pointers:
-
-function countUniqueValues(arr) {
-  let i = 0;
-  let j = 1;
-
-  if (arr.length === 0) {
-    return i;
-  }
-
-  // example array:  1 1 2 3
-  // marks the next run through the loop
-
-  while (j < arr.length) {
-    let first = arr[i]; // 1* 1 2 3  // 1* 1 2 3  // 1 2* 2 3
-    let second = arr[j]; // 1 1* 2 3  // 1 1 2* 3  // 1 2 2 3*
-
-    if (first === second) {
-      j++; // 1 1 2* 3 // not equal // no equal (doesn't run)
-    } else if (first !== second) {
-      // equal  // 1* 1 2 3 !== 1 1 2* 3   // 1 2* 2 3 !== 1 2 2 3*
-      i++; // 1 1* 2 3  // 1 2 2* 3
-      arr[i] = arr[j]; //1 2* 2 3 // 1 2 3* 3
-      if (j === arr.length - 1) {
-        return i + 1; //return the index that i is at +1
-      } else {
-        j++; //1 2 2 3* //
-      }
-    }
-  }
-}
-
-//Udemy's solution
+//multiple pointers solution:
 
 // don't need to increment j in a for loop with j
 function countUniqueValuesAlt(arr) {
