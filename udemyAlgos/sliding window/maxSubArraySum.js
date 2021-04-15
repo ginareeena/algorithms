@@ -63,21 +63,28 @@ function maxSubArraySumAlt(arr, n) {
 }
 
 //udemy's window solution:
-// [1,2,3], 2
+
+//Big O =  O(n)?
+
+// example array went through here:
+// [1,2,3,4], 2
+
 function maxSubArraySumOpt(arr, num) {
   let maxSum = 0;
   let tempSum = 0;
-  // let max = -Infinity;
   if (num > arr.length) return null;
   for (let i = 0; i < num; i++) {
     maxSum += arr[i];
   }
   tempSum = maxSum;
-  //instead of re-adding ever thing over we subtract the first num and add
-  // the new last num to our window sum
+  //instead of re-adding ever thing over we just subtract the first num
+  // and add new last num to our window sum
   //we set i = to num to start our next "window" after the first one
   for (let i = num; i < arr.length; i++) {
-    // 0 - []
+    //i = 2  // 3
+    // 3 - arr[0] + arr[2] // 5- arr[3-2] + arr[3] -> 5-2+4
+    // 3 - 1 + 3  // 3 + 4 = 7
+    // 5
     tempSum = tempSum - arr[i - num] + arr[i];
     maxSum = Math.max(maxSum, tempSum);
   }
