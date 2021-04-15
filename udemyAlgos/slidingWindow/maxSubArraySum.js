@@ -31,11 +31,8 @@ function sumAll(arr) {
 
 function maxSubArraySum(arr, n) {
   let sum = 0;
-  //O(n)
   for (let i = 0; i < arr.length; i++) {
-    //O(n)
     let window = arr.slice(i, i + n);
-    //O(n)
     let windowSum = sumAll(window);
     if (windowSum > sum) {
       sum = windowSum;
@@ -44,7 +41,7 @@ function maxSubArraySum(arr, n) {
   return sum;
 }
 
-//udemy's solution
+//udemy's naive solution Big O= O(n^2)
 function maxSubArraySumAlt(arr, n) {
   if (n > arr.length) {
     // or return sum of all the nums?
@@ -63,6 +60,28 @@ function maxSubArraySumAlt(arr, n) {
     }
   }
   return max;
+}
+
+//udemy's window solution:
+// [1,2,3], 2
+function maxSubArraySumOpt(arr, num) {
+  let maxSum = 0;
+  let tempSum = 0;
+  // let max = -Infinity;
+  if (num > arr.length) return null;
+  for (let i = 0; i < num; i++) {
+    maxSum += arr[i];
+  }
+  tempSum = maxSum;
+  //instead of re-adding ever thing over we subtract the first num and add
+  // the new last num to our window sum
+  //we set i = to num to start our next "window" after the first one
+  for (let i = num; i < arr.length; i++) {
+    // 0 - []
+    tempSum = tempSum - arr[i - num] + arr[i];
+    maxSum = Math.max(maxSum, tempSum);
+  }
+  return maxSum;
 }
 
 console.log("maxSubArraySum([1, 2, 3], 2):", maxSubArraySum([1, 2, 3], 2)); // 6
