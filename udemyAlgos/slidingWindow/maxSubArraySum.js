@@ -37,9 +37,32 @@ function maxSubArraySum(arr, n) {
     let window = arr.slice(i, i + n);
     //O(n)
     let windowSum = sumAll(window);
-    windowSum > sum ? (sum = sumAll(window)) : (sum = sum);
+    if (windowSum > sum) {
+      sum = windowSum;
+    }
   }
   return sum;
+}
+
+//udemy's solution
+function maxSubArraySumAlt(arr, n) {
+  if (n > arr.length) {
+    // or return sum of all the nums?
+    return null;
+  }
+  let max = -Infinity;
+  // we stop looping at the last place we can sum "n" num of digits
+  for (let i = 0; i < arr.length - (n + 1); i++) {
+    temp = 0;
+    // this is going to add everything consecutive up to index n
+    for (let j = 0; j < n; j++) {
+      temp += arr[i + j];
+    }
+    if (temp > max) {
+      max = temp;
+    }
+  }
+  return max;
 }
 
 console.log("maxSubArraySum([1, 2, 3], 2):", maxSubArraySum([1, 2, 3], 2)); // 6
