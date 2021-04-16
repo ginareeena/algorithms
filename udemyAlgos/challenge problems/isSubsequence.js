@@ -4,13 +4,14 @@
 
 // isSubsequence("sing", "sting") // true
 // isSubsequence("abc", "acb")  // false
-// isSubsequence("cat", catamaran) //true
+// isSubsequence("cat", "cat palm") //true
 
 //multiple pointers solution:
 
-function isSubsequence(str1, str2) {
+function isSubsequenceFirst(str1, str2) {
   if (str1.length > str2.length) return false;
   let idx1 = 0;
+
   for (let idx2 = 0; idx2 < str2.length; idx2++) {
     let letter1 = str1[idx1];
     let letter2 = str2[idx2];
@@ -29,18 +30,52 @@ function isSubsequence(str1, str2) {
   return false;
 }
 
-console.log(isSubsequence("hello", "hello world")); // true
-console.log(isSubsequence("hello world", "hello")); // false
-console.log(isSubsequence("cat", "catamarran")); // true
-console.log(isSubsequence("sing", "sting")); // true
+// my solution optimized:
 
-console.log(isSubsequence("cat", "cat")); // true
-console.log(isSubsequence("cat", "scoat")); // true
-console.log(isSubsequence("dat", "scoat")); // false
+function isSubsequence(str1, str2) {
+  if (str1.length > str2.length) return false;
+  if (!str1) return true;
+
+  let i = 0;
+  let j = 0;
+
+  while (j < str2.length) {
+    if (str1[i] === str2[j]) {
+      if (i === str1.length - 1) return true;
+      i++;
+      j++;
+    } else {
+      j++;
+    }
+  }
+  return false;
+}
+
+//udemy's solution:
+function isSubsequenceAlt(str1, str2) {
+  let i = 0;
+  let j = 0;
+  if (!str1) return true;
+  while (j < str2.length) {
+    if (str2[j] === str1[i]) i++;
+    if (i === str1.length) return true;
+    j++;
+  }
+  return false;
+}
+
+// console.log(isSubsequence("hello", "hello world")); // true
+// console.log(isSubsequence("hello world", "hello")); // false
+// console.log(isSubsequence("cat", "catamarran")); // true
+// console.log(isSubsequence("sing", "sting")); // true
+// console.log(isSubsequence("cat", "cat")); // true
+// console.log(isSubsequence("cat", "scoat")); // true
+// console.log(isSubsequence("dat", "scoat")); // false
 
 // initially thought the words had to be sequential in
 // the second string not just "in order"
-// these return true only if the letters are sequential:
+
+// these next solutions return true only if the letters are sequential:
 // isSubsequenceSequential("sing", "sting") // false
 
 function isSubsequenceSlice(str1, str2) {
