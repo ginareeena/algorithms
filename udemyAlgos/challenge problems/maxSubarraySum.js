@@ -20,4 +20,8 @@ function maxSubarraySum(arr, n) {
   return maxSum;
 }
 
+//Big O= O(n)
+// Time= O(n)
+// Space= O(1)
+
 console.log(maxSubarraySum([100, 200, 300, 400], 2)); // 700

@@ -16,17 +16,17 @@ function addUpToOptimized(n) {
 
 /// can paste below into browser to test performance
 
-var t1 = performance.now();
-addUpTo(10000000000);
-var t2 = performance.now();
-console.log(`Time Elapsed: ${(t2 - t1) / 1000} seconds.`);
+// var t1 = performance.now();
+// addUpTo(10000000000);
+// var t2 = performance.now();
+// console.log(`Time Elapsed: ${(t2 - t1) / 1000} seconds.`);
 
-var t3 = performance.now();
-addUpToOptimized(10000000000);
-var t4 = performance.now();
-console.log(`Time Elapsed: ${(t2 - t1) / 1000} seconds.`);
+// var t3 = performance.now();
+// addUpToOptimized(10000000000);
+// var t4 = performance.now();
+// console.log(`Time Elapsed: ${(t2 - t1) / 1000} seconds.`);
 
-// console.log(addUpTo(2))
-// console.log(addUpTo(4))
-// console.log(addUpTo(3))
-// console.log(addUpToOptimized(3))
+console.log(addUpTo(2));
+console.log(addUpTo(4));
+console.log(addUpTo(3));
+console.log(addUpToOptimized(3));
