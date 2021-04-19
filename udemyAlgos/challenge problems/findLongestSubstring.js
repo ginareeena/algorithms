@@ -1,5 +1,5 @@
 function findLongestSubstring(str) {
   let max = -Infinity;
-  let seen={}
+  let seen= {}
   for(let )
 }
