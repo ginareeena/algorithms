@@ -14,14 +14,10 @@ function power1(base, exp) {
 
 //recursive solution
 function power(base, exp) {
-  let product = base;
-  if (exp === 1) {
-    return base;
-  }
   if (exp === 0) {
     return 1;
   }
-  return product * power(base, exp - 1);
+  return base * power(base, exp - 1);
 }
 
 console.log(power(2, 0)); // 0 -> 1
