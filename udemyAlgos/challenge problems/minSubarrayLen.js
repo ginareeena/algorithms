@@ -11,27 +11,6 @@
 //minSubarrayLen([1,4,16,22,5,7,8,9,10],55) // 5
 
 //is the array sorted? no
-// pointers only work if it's sorted... hmmm
-
-function minSubarrayLenAttempt(arr, target) {
-  // return # of numbers to make target
-  let tempSum = 0;
-  let n = 1;
-  // increment n each time...
-  // while (n < arr.length) {
-  for (let i = 0; i < arr.length; i++) {
-    if (n > arr.length) return 0;
-    for (let j = 0; j < j + n; j++) {
-      tempSum = tempSum - arr[j - n] + arr[j];
-      if (tempSum === target) return n;
-      n++;
-    }
-    tempSum = 0;
-  }
-  return 0;
-}
-
-//udemy's solution
 
 function minSubArrayLen(nums, sum) {
   let total = 0;
