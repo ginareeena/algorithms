@@ -6,7 +6,6 @@
 function fib(num) {
   // why isn't this <=1 ? why wouldn't 2 return 2?
   if (num <= 2) return 1;
-
   return fib(num - 1) + fib(num - 2);
 }
 
