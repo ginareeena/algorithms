@@ -3,26 +3,35 @@
 
 function nestedEvenSum(obj) {
   let sum = 0;
-  let keys = Object.keys(obj);
-
-  for (let i = 0; i < keys.length; i++) {
-    let key = keys[i];
+  for (let key in obj) {
     let val = obj[key];
-    if (val % 2 === 0) {
+    if (typeof val === "number" && val % 2 === 0) {
       sum += val;
     }
     if (typeof val === "object" && !Array.isArray(val)) {
       sum += nestedEvenSum(val);
     }
   }
-
   return sum;
 }
 
-//write a recursive function that returns the sum of all
+//udemy's solution
+
+function nestedEvenSumAlt(obj, sum = 0) {
+  for (var key in obj) {
+    if (typeof obj[key] === "object") {
+      sum += nestedEvenSum(obj[key]);
+    } else if (typeof obj[key] === "number" && obj[key] % 2 === 0) {
+      sum += obj[key];
+    }
+  }
+  return sum;
+}
+
+//write a recursive function that returns the sum of ALL
 // numbers in an object which may contain nested objects
 
-function nestedSum(obj) {
+function nestedAllSum(obj) {
   let sum = 0;
   let keys = Object.keys(obj);
 
