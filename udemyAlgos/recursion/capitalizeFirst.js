@@ -1,11 +1,10 @@
-//given a str capitalize the first letter of each word in the string using recursion
+//given a string capitalize the first letter of each word in the string using recursion
 
 function capitalizeFirstStr(str) {
   let strArr = str.split(" ");
   if (str.length === 0) {
     return "";
   }
-  // console.log(strArr);
   let newStr = strArr[0].slice(0, 1).toUpperCase() + strArr[0].slice(1);
   let nextStr = strArr.slice(1).join(" ");
 
