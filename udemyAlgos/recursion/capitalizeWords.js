@@ -1,23 +1,31 @@
 // write a recursive function that given an array of words
 // returns a new array with each word capitalized
 
-function capitalizeWords(arr) {
+function capitalizeWordsMin(arr) {
   let newArr = [];
-  let firstWord = arr[0];
-  let newWord = "";
-  if (arr.length === 0) {
-    return [];
+  if (arr.length === 1) {
+    return [arr[0].toUpperCase()];
   }
-  for (let i = 0; i < firstWord.length; i++) {
-    let letter = firstWord[i];
-    newWord += letter.toUpperCase();
-  }
+  let newWord = arr[0].toUpperCase();
+  newArr.push(newWord);
+  return newArr.concat(capitalizeWordsMin(arr.slice(1)));
+}
 
-  if (newWord.length > 0) {
-    newArr.push(newWord);
+//udemy's solution
+
+function capitalizeWords(array) {
+  if (array.length === 1) {
+    return [array[0].toUpperCase()];
   }
-  return newArr.concat(capitalizeWords(arr.slice(1)));
+  let res = capitalizeWords(array.slice(0, -1));
+  res.push(array.slice(array.length - 1)[0].toUpperCase());
+  return res;
 }
 
 let words = ["i", "am", "a", "cat"];
+// console.log(capitalizeWords(words));
+
+console.log("my solution:");
+console.log(capitalizeWordsMin(words));
+console.log("udemys solution:");
 console.log(capitalizeWords(words));
