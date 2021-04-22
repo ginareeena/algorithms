@@ -1,12 +1,13 @@
-// given an array with sorted numbers and a value
-// write a function that uses binary search to find the value
+// write a function that accepts a sorted array and a search value
+// use binary search to return the index of the value if in the array
+// if nothing is found return -1
 
 function binarySearchNum(arr, val) {
-  let left = 0;
-  let right = arr.length - 1;
+  let start = 0;
+  let end = arr.length - 1;
   let middle;
-  while (left <= right) {
-    middle = Math.floor((left + right) / 2);
+  while (start <= end) {
+    middle = Math.floor((start + end) / 2);
 
     let currVal = arr[middle];
     console.log("currVal", currVal);
@@ -14,9 +15,9 @@ function binarySearchNum(arr, val) {
       return middle;
     }
     if (currVal > val) {
-      right = middle - 1;
-    } else if (currVal < val) {
-      left = middle + 1;
+      end = middle - 1;
+    } else {
+      start = middle + 1;
     }
   }
   return -1;
@@ -49,4 +50,4 @@ function binarySearchNumRecursion(arr, val) {
 let nums = [1, 2, 3, 4, 5];
 
 console.log(binarySearchNum(nums, 5));
-console.log(binarySearchNumRecursion(nums, 5));
+// console.log(binarySearchNumRecursion(nums, 5));
