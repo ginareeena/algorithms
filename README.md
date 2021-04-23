@@ -1,0 +1,1 @@
+This repo contains practice algorithm problems. The outer folder is "udemy" which contains algorithm problems from a udemy algorithms and data structures course. Inside problems are broken into separate folders by problem/solution type.
