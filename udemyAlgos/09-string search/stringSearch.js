@@ -26,5 +26,24 @@ function stringSearch(haystack, needle) {
 }
 
 let word = "wowomgzomg";
+
+//udemy's naive solution:
+function naiveStringSearch(haystack, needle) {
+  let count = 0;
+  for (let h = 0; h < haystack.length; h++) {
+    for (let n = 0; n < needle.length; n++) {
+      if (needle[n] !== haystack[n + h]) break;
+      if (n === needle.length - 1) count++;
+    }
+  }
+  return count;
+}
+
+// udemy's "KNP solution" is being reworked by udemy teacher
+// search KMP string search algorithm
+
+console.log(stringSearch(word, "omg"));
+console.log(stringSearch(word, "omgggggggggggggggg"));
+
 console.log(naiveStringSearch(word, "omg"));
 console.log(naiveStringSearch(word, "omgggggggggggggggg"));
