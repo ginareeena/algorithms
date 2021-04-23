@@ -39,11 +39,10 @@ function naiveStringSearch(haystack, needle) {
   return count;
 }
 
-// udemy's "KNP solution" is being reworked by udemy teacher
-// search KMP string search algorithm
+// udemy's "KNP solution" is being reworked by teacher not available currently
+// research "KMP" string search algorithm
 
 console.log(stringSearch(word, "omg"));
 console.log(stringSearch(word, "omgggggggggggggggg"));
-
 console.log(naiveStringSearch(word, "omg"));
 console.log(naiveStringSearch(word, "omgggggggggggggggg"));
