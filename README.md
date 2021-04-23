@@ -1,4 +1,4 @@
-**Algorithms**
+# algorithms
 
 This repo contains practice algorithm problems. 
 
