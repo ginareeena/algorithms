@@ -1,6 +1,6 @@
 //write a function that takes a string and a search
 
-function naiveStringSearch(haystack, needle) {
+function stringSearch(haystack, needle) {
   let count = 0;
   let hIdx = 0;
   let nIdx = 0;
