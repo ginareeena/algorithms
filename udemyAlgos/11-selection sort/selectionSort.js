@@ -2,12 +2,9 @@ function selectionSort(arr) {
   let min = arr[0];
   let minIdx = 0;
   let startIdx = 0;
-  // how many comparisons we make
+  // decrement how many comparisons we make
   for (let i = arr.length; i > 0; i--) {
     for (let j = startIdx; j < arr.length; j++) {
-      console.log("i,j, min, arr[j]", i, j, min, arr[j]);
-
-      // console.log("min, arr[j], arr", min, arr[j], arr);
       if (arr[j] < min) {
         min = arr[j];
         minIdx = j;
@@ -21,9 +18,9 @@ function selectionSort(arr) {
       //set min to the one we started with
       arr[minIdx] = temp;
     }
-    //up the count idx so the comparisons start at the next number!
+    //start at the next index
     startIdx++;
-    // we have to update our min otherwise we will never swap again because we're comparing to that first smallest number
+    // update min to the first number in our new "window"
     min = arr[startIdx];
   }
   return arr;
