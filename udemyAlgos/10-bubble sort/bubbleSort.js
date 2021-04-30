@@ -7,11 +7,11 @@
 // because j runs until i-1 we make one fewer comparison each time
 // this is how we avoid resorting the numbers already sorted at the end
 
-// if array is nearly sorted we can add the noSwaps logic
+// if array is nearly sorted this is less efficient
+// to optimize if nearly sorted we can add the noSwaps logic
 
 function bubbleSort(arr) {
   // let noSwaps;
-
   for (let i = arr.length; i > 0; i--) {
     // noSwaps = true;
     for (let j = 0; j < i - 1; j++) {
@@ -41,8 +41,9 @@ function bubbleSortNew(arr) {
   }
 }
 
-//unefficient solution
+//naive solution
 //runs through every single item multiple times and past end of loop
+
 function bubbleSortNaive(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length; j++) {
