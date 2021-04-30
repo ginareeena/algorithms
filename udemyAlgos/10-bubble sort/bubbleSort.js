@@ -7,21 +7,28 @@
 // because j runs until i-1 we make one fewer comparison each time
 // this is how we avoid resorting the numbers already sorted at the end
 
+// if array is nearly sorted we can add the noSwaps logic
+
 function bubbleSort(arr) {
+  // let noSwaps;
+
   for (let i = arr.length; i > 0; i--) {
+    // noSwaps = true;
     for (let j = 0; j < i - 1; j++) {
       if (arr[j] > arr[j + 1]) {
         let temp = arr[j];
         arr[j] = arr[j + 1];
         arr[j + 1] = temp;
+        // noSwaps = false;
       }
     }
+    // if (noSwaps) break;
   }
   return arr;
 }
 
 //ES2015 syntax newer way to write the swap
-function bubbleSort(arr) {
+function bubbleSortNew(arr) {
   const swap = (arr, idx1, idx2) => {
     [arr[idx1], (arr[idx2] = [arr[idx2], arr[idx1]])];
   };
@@ -34,7 +41,7 @@ function bubbleSort(arr) {
   }
 }
 
-//non efficient solution
+//unefficient solution
 //runs through every single item multiple times and past end of loop
 function bubbleSortNaive(arr) {
   for (let i = 0; i < arr.length; i++) {
