@@ -11,7 +11,7 @@
 // to optimize if nearly sorted we can add the noSwaps logic
 
 //time complexity = O(n2) because nested loops
-//if nearly sorted and use noSwaps logic rounds down to O(n)
+//if nearly sorted can use noSwaps logic rounds down to O(n)
 
 function bubbleSort(arr) {
   // let noSwaps;
