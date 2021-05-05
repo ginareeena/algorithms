@@ -1,3 +1,5 @@
+//Big O= O(n^2)
+
 function selectionSort(arr) {
   let min = arr[0];
   let minIdx = 0;
