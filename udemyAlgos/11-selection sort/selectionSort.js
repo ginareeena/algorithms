@@ -1,4 +1,5 @@
-//Big O= O(n^2)
+// Time Complext= O(n^2)
+// Space Complexity is better than bubble sort because we only make one swap at the end
 
 function selectionSort(arr) {
   let min = arr[0];

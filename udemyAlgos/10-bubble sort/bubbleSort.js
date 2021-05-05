@@ -10,8 +10,10 @@
 // if array is nearly sorted this is less efficient
 // to optimize if nearly sorted we can add the noSwaps logic
 
-//Big O = O(n2)
+//Big O
+//Time Complexity: O(n2)
 //if nearly sorted and use noSwaps logic rounds down to O(n)
+//Space Complexity isn't great because we are constantly swapping
 
 function bubbleSort(arr) {
   // let noSwaps;
