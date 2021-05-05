@@ -26,4 +26,22 @@ function selectionSort(arr) {
   return arr;
 }
 
+// they use the lowest index to make the comparison
+// rather than save the value
+
+function selectionSortAlt(arr) {
+  let lowest = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[lowest]) {
+        lowest = j;
+      }
+    }
+    let temp = arr[i];
+    arr[i] = arr[lowest];
+    arr[lowest] = temp;
+  }
+  return arr;
+}
+
 console.log(selectionSort([52, 3, 14, 6]));
