@@ -3,7 +3,7 @@
 //Big O= O(n)
 //don't need to loop through every element can just increment i += 2
 
-//best solution
+//best solutiont sta
 function onlyElementsAtEvenIndex(array) {
   let newArray = [];
   for (let i = 0; i < array.length; i += 2) {
