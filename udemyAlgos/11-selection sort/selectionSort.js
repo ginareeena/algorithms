@@ -30,18 +30,21 @@ function selectionSort(arr) {
 // rather than save the value
 
 function selectionSortAlt(arr) {
-  let lowest = 0;
+  let lowest;
   for (let i = 0; i < arr.length; i++) {
+    lowest = i;
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[j] < arr[lowest]) {
         lowest = j;
       }
     }
-    let temp = arr[i];
-    arr[i] = arr[lowest];
-    arr[lowest] = temp;
+    if (i !== lowest) {
+      let temp = arr[i];
+      arr[i] = arr[lowest];
+      arr[lowest] = temp;
+    }
   }
   return arr;
 }
 
-console.log(selectionSort([52, 3, 14, 6]));
+console.log(selectionSortAlt([52, 3, 14, 6]));
