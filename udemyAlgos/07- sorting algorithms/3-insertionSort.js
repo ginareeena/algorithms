@@ -1,11 +1,9 @@
-//start by picking second element
-//compare to next and swap if needed
-//continue to next element
-//and if it's incorrect iterate through sorted portion (left side) until find the right position
-//repeat until the array is sorted
+// Big O
+// Worst Case: O(n^2) nested loops
+// Best Case: O(n)
 
-//.insert() takes an index to insert and an item
-//array.insert(index, item);
+// If data is almost sorted would work well where data is sorted
+// and coming in live and needs to be input
 
 function insertionSort(arr) {
   for (let i = 1; i < arr.length; i++) {
