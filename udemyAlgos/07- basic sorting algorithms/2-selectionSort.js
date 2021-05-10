@@ -1,4 +1,5 @@
-// Time Complext= O(n^2)
+// Time Complexity= O(n^2)
+// Doesn't perform any better with nearly sorted data
 // Space Complexity is better than bubble sort because we only make one swap at the end
 
 function selectionSort(arr) {

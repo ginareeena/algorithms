@@ -1,19 +1,14 @@
-//.sort((a,b)=>{a-b})
-//takes a call back.. if neg it will sort a first if pos b first
-//.sort((a,b)=>{a.length-b.length}) // sorts by length
+//Big O
+//Time Complexity: O(n2)
+//if nearly sorted and use noSwaps logic rounds down to O(n)
+//Space Complexity isn't great because we are constantly swapping
 
 // i controls how many comparisons are made
 // each time j finishes i decrements
 // because j runs until i-1 we make one fewer comparison each time
 // this is how we avoid resorting the numbers already sorted at the end
 
-// if array is nearly sorted this is less efficient
 // to optimize if nearly sorted we can add the noSwaps logic
-
-//Big O
-//Time Complexity: O(n2)
-//if nearly sorted and use noSwaps logic rounds down to O(n)
-//Space Complexity isn't great because we are constantly swapping
 
 function bubbleSort(arr) {
   // let noSwaps;
