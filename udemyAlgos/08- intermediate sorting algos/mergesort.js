@@ -1,4 +1,4 @@
-//helper function to merge arrays
+//helper function to merge/sort arrays
 
 function merge(arrA, arrB) {
   let results = [];
@@ -24,7 +24,25 @@ function merge(arrA, arrB) {
   return results;
 }
 
-console.log(merge([1, 2, 4], [2, 5]));
-console.log(merge([1, 2, 4, 6], [2, 5]));
-console.log(merge([2, 2, 4, 6], [1, 5]));
-console.log(merge([], [8, 10]));
+// tests for merge helper function
+// console.log(merge([1, 2, 4], [2, 5]));
+// console.log(merge([1, 2, 4, 6], [2, 5]));
+// console.log(merge([2, 2, 4, 6], [1, 5]));
+// console.log(merge([], [8, 10]));
+
+//pseudo code for merge sort
+//split array in half til it's composed of arrays with length 1 or less
+//
+
+function mergeSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+  let mid = Math.floor(arr.length / 2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
+  return merge(left, right);
+}
+
+console.log(mergeSort([1, 78, 4, 8, 9]));
+// console.log("cats");
