@@ -34,6 +34,12 @@ function merge(arrA, arrB) {
 //split array in half til it's composed of arrays with length 1 or less
 //
 
+//Time Complexity: O(n log n)
+// the rate we have to split the array -> log n
+// grows with n -> n * log n
+
+//Space Complexity: O(n)
+
 function mergeSort(arr) {
   if (arr.length <= 1) {
     return arr;
@@ -45,4 +51,3 @@ function mergeSort(arr) {
 }
 
 console.log(mergeSort([1, 78, 4, 8, 9]));
-// console.log("cats");
