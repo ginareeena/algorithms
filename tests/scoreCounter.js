@@ -83,6 +83,7 @@ function codingScoreReportPercent(scores = []) {
 
   return sortedPercentages;
 }
+
 console.log(codingScoreReportPercent([330, 723, 730, 825]));
 
 //alternate solution
