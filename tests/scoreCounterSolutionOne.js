@@ -4,7 +4,7 @@
 // don't return score levels that don't occur
 
 // input : [330, 723, 730, 825]
-// output: ['Good: 50.00%', 'Elite: 25.00%', 'Poor: 25.00%']
+// desired output: ['Good: 50.00%', 'Elite: 25.00%', 'Poor: 25.00%']
 
 // Levels:
 // Poor: 300-600
@@ -79,9 +79,6 @@ function codingScoreReportPercent(scores = []) {
 let scoreArr = [330, 723, 730, 825];
 
 console.log(codingScoreReportPercent(scoreArr));
-
-// ['Poor: 25.00%', 'Good: 50.00%', 'Elite: 25.00%']
-// ['Good: 50.00%', 'Elite: 25.00%', 'Poor: 25.00%']
 
 // const scorePercentages = Object.keys(scoreCounter).reduce(
 //   (acc, key) => ({

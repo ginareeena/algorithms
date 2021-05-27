@@ -66,7 +66,7 @@ class RequestQueue {
    */
   async processNext() {
     if (this.queue.length) {
-      let next = queue.pop();
+      let next = this.queue.pop();
       await next.request();
       if (next.onExecuted) {
         next.onExecuted();
