@@ -13,7 +13,7 @@
 // Excellent: 750-799
 // Elite: 800+
 
-// helper function to get Level from score
+// helper function to get Level from Score
 function getLevelFromScore(num) {
   if (num >= 300) {
     if (num < 600) {
@@ -36,12 +36,13 @@ function getLevelFromScore(num) {
 
 // const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
+// we'll use this to sort our results
 const levelsOrder = ["Poor", "Fair", "Good", "Excellent", "Elite"];
 
 function codingScoreReportPercent(scores = []) {
-  // create the counter object
+  // creates scoreCounter object
   const scoreCounter = scores.reduce((acc, score) => {
-    // get the score Level for each score and store in scoreCounter
+    // get the level for each score and store frequency in scoreCounter
     const scoreLevel = getLevelFromScore(score);
     if (scoreLevel) {
       if (acc[scoreLevel]) {
@@ -54,6 +55,7 @@ function codingScoreReportPercent(scores = []) {
   }, {});
   // two ways to get the total # of scores for calculating average
   // second way is more foolproof
+
   const qty = scores.length;
   const total = Object.values(scoreCounter).reduce(
     (sum, curr) => sum + curr,
@@ -71,7 +73,7 @@ function codingScoreReportPercent(scores = []) {
       // otherwise we will sort in descending order
       return bVal - aVal;
     })
-    // this will map the values to an array of strings with the info we want
+    // this will map strings to an array containing the information we want
     .map((scoreLevel) => {
       return `${scoreLevel}: ${(
         (scoreCounter[scoreLevel] / total) *
@@ -83,7 +85,10 @@ function codingScoreReportPercent(scores = []) {
 }
 console.log(codingScoreReportPercent([330, 723, 730, 825]));
 
-////creates a second object instead of chaining sort and then map
+//alternate solution
+
+//creates a second object before mapping to a final array
+//instead of chaining sort and map onto the counter obj
 
 // function codingScoreReportPercent(scores = []) {
 //   const scoreCounter = scores.reduce((acc, score) => {
