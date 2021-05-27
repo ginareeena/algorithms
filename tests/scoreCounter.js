@@ -52,8 +52,7 @@ function codingScoreReportPercent(scores = []) {
       return acc;
     }
   }, {});
-  console.log(scoreCounter);
-  // two ways to get the total # of scores
+  // two ways to get the total # of scores for calculating average
   // second way is more foolproof
   const qty = scores.length;
   const total = Object.values(scoreCounter).reduce(
@@ -65,7 +64,7 @@ function codingScoreReportPercent(scores = []) {
     .sort((a, b) => {
       const aVal = scoreCounter[a];
       const bVal = scoreCounter[b];
-      // if they are equal we will sort by subtracting the index of b -a in the levels order array
+      // if they are equal we will sort by subtracting the index of b - a in the levels order array
       if (bVal === aVal) {
         return levelsOrder.indexOf(b) - levelsOrder.indexOf(a);
       }
