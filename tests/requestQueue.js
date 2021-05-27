@@ -25,7 +25,6 @@
 //  */
 class RequestQueue {
   constructor() {
-    // TODO - optional, any setup you want
     this.queue = [];
   }
 
@@ -68,14 +67,15 @@ class RequestQueue {
   async processNext() {
     if (this.queue.length) {
       let next = queue.pop();
+      await next.request();
+      if (next.onExecuted) {
+        next.onExecuted();
+      }
     }
   }
 
-  /**
-   * Returns the current size of the queue.
-   */
   getSize() {
-    // TODO
+    return this.queue.length;
   }
 }
 
