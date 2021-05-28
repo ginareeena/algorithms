@@ -1,5 +1,6 @@
 function showList(e) {
   e.preventDefault();
+  console.log("e.currentTarget", e.currentTarget);
   const classList = e.currentTarget.classList;
   // Check if the dropdown is currently open
   const isOpen = classList.contains("dropdown-open");
@@ -9,25 +10,22 @@ function showList(e) {
     classList.add("dropdown-open");
   }
 }
-// document.getElementById("dropdown").classList.toggle("show");
-// }
 
 document
   .querySelectorAll(".dropdown")
   .forEach((el) => el.addEventListener("click", showList));
 
-// function handleClick(e) {
+window.onclick = function (e) {
+  if (!e.target.matches(".dropBtn")) {
+    let dropdowns = document.getElementsByClassName("dropdown");
 
-//   // Prevent <a> links from changing the page
-//   e.preventDefault()
-//   const classList = e.currentTarget.classList
-
-// Listen to clicks on all drop downs
-// document.querySelectorAll('.dropdown')
-//   .forEach(el => el.addEventListener('click', handleClick))
-
-//handles click
-
-// window.onclick= function(e){
-//   if(e.target.matches)
-// }
+    for (i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      console.log("openDropDown", openDropdown);
+      console.log("openDropdown.classList", openDropdown.classList);
+      if (openDropdown.classList.contains("dropdown-open")) {
+        openDropdown.classList.remove("dropdown-open");
+      }
+    }
+  }
+};
