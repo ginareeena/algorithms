@@ -20,9 +20,7 @@ nav {
   font-size: 21px;
   border: none;
   position: relative;
-  display: inline-block;
   border: none;
-  z-index: 1;
 }
 
 #caret {
@@ -39,13 +37,28 @@ nav {
   padding: 16px;
   border: none;
   font-size: 21px;
+  background-color: #f8f8f8;
 }
 
-/* places the dropdown content */
+/* styles the dropdown content */
 
 .dropdown-content {
   display: none;
   position: absolute;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: lightgray;
+  border-width: 1px;
+  min-width: 100%;
+  margin: 0;
+  /* padding: 10px; */
+  background-color: white;
+  box-sizing: border-box;
+  padding: 10px 0px;
+}
+
+.dropdown-open .dropdown-content {
+  display: block;
 }
 
 /* makes links in drop down black and removes line  */
@@ -55,13 +68,14 @@ nav {
   display: block;
   color: black;
   padding: 10px 12px;
+  margin: 0;
 }
 
 /* Show the dropdown menu on hover */
-
+/*
 .dropdown:hover .dropdown-content {
   display: block;
-}
+} */
 
 .dropBtn:hover {
   background-color: #04aa6d;
