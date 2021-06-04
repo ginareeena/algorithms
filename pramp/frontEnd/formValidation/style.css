@@ -1,0 +1,58 @@
+#signUpBtn {
+  background-color: #a6c6dd;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 3px;
+  margin-top: 6px;
+  font-style: bold;
+  width: 95px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#formContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 220px;
+  padding: 10px;
+  margin: 5px;
+  margin-bottom: 5px;
+}
+
+.form {
+  height: 22px;
+  border: 2px solid #dddddd;
+  border-radius: 3px;
+}
+
+input {
+  height: 22px;
+  border-radius: 3px;
+  border-color: #dddddd;
+  box-sizing: border-box;
+  padding: 15px;
+  margin-bottom: 5px;
+  background-image: url("searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  border: 1px solid #dddddd;
+}
+
+label {
+  font-family: Arial;
+  font-size: 16px;
+  margin-top: 2px;
+  outline: light-blue;
+}
+
+.err {
+  color: red;
+  font-weight: lighter;
+  font-family: Arial;
+}
+
+#message {
+  display: none;
+}

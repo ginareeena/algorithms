@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>form demo</title>
+    <script defer src="form.js"></script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+  </head>
+  <body>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Form Here -->
+
+    <form id="formContainer" name="form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Name" />
+
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="Email" />
+
+      <label for="password">Password</label>
+      <input
+        type="text"
+        id="password"
+        name="password"
+        placeholder="Password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      />
+
+      <label for="confirm">Confirm Password</label>
+      <input
+        type="text"
+        id="confirm"
+        name="confirm"
+        placeholder="Confirm Password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      />
+      <button id="signUpBtn" onClick="{validateForm()}">Sign Up</button>
+      <ul id="message" class="err">
+        <li id="nameErr">Name is required</li>
+        <li>Email is invalid</li>
+        <li>Password must be 6 characters or more</h3>
+        <li>Passwords don't match</li>
+        </ul>
+    </form>
+  </body>
+</html>
+
+
+        <!-- <h3>Password must contain the following:</h3>
+        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+        <p id="number" class="invalid">A <b>number</b></p>
+        <p id="length" class="invalid">Minimum <b>8 characters</b></p> -->
