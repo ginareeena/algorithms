@@ -4,10 +4,9 @@
 // the function should return them in an array in any order
 // if no two numbers sum up to the target sum, the function should return
 // an empty array
+// It should return immediately the first two that sum up to the target
 
 //Big O= O n^2
-
-// should return immediately the first two that sum up to the target
 
 function twoNumberSum3(array, targetSum) {
   for (let i = 0; i < array.length - 1; i++) {
