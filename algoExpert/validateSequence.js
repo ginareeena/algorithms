@@ -6,14 +6,7 @@
 //adjacent in the array but that are in the same order as they appear in the array.
 //Ex: [1,3,4] and [2,4] are subsequences of [1,2,3,4]
 
-function isValidSubsequence(array, sequence) {
-  console.log("array", array);
-  console.log("sequence", sequence);
-
-  if (sequence.length > array.length) {
-    return false;
-  }
-
+function isValidSubsequenceA(array, sequence) {
   let aIdx = 0;
   let sIdx = 0;
 
@@ -29,13 +22,9 @@ function isValidSubsequence(array, sequence) {
   return false;
 }
 
-//cleaner solution:
+//solution one cleaned up:
 
-function isValidSubsequence(array, sequence) {
-  if (sequence.length > array.length) {
-    return false;
-  }
-
+function isValidSubsequenceB(array, sequence) {
   let aIdx = 0;
   let sIdx = 0;
 
@@ -44,4 +33,16 @@ function isValidSubsequence(array, sequence) {
     aIdx++;
   }
   return sIdx === sequence.length;
+}
+
+//refactored solution:
+function isValidSubsequence(array, sequence) {
+  let seqIdx = 0;
+  for (let value of array) {
+    if (seqIdx === sequence.length) break;
+    if (sequence[seqIdx] === value) {
+      seqIdx++;
+    }
+  }
+  return seqIdx === sequence.length;
 }
