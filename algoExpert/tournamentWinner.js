@@ -18,33 +18,6 @@
 
 //results= [1, 0, 0, 1]
 
-function tournamentWinner(competitions, results) {
-  let highScore = 0;
-  let winningTeam = "";
-
-  let scoreObj = {};
-  for (let i = 0; i < competitions.length; i++) {
-    let currMatch = competitions[i];
-    let result = results[i];
-    if (result === 0) {
-      scoreObj[currMatch[1]] = scoreObj[currMatch[1]] + 3 || 3;
-    } else if (result === 1) {
-      scoreObj[currMatch[0]] = scoreObj[currMatch[0]] + 3 || 3;
-    }
-  }
-
-  for (team in scoreObj) {
-    let score = scoreObj[team];
-    if (score > highScore) {
-      highScore = score;
-      winningTeam = team;
-    }
-  }
-  return winningTeam;
-}
-
-// refactoring the above
-
 // let [homeTeam, awayTeam] = competitions[i];
 function tournamentWinner(competitions, results) {
   let highScore = 0;
