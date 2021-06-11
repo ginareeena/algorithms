@@ -17,7 +17,6 @@ function nonConstructibleChange(coins) {
   return currentMaxChange + 1;
 }
 
-// how this works
 // because we've figured out we can make every number up to the current number
-// we know we can make everynumber up to it as well...
-// because we can add all those previous numbers to it!
+// this means we can also make every number from our current number to
+// the sum of our old max and the current number
