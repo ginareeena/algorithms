@@ -49,3 +49,12 @@ function findClosestValueInBstHelper(tree, target, closest) {
     return closest;
   }
 }
+
+// This is the class of the input tree. Do not edit.
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
