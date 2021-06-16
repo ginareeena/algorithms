@@ -32,10 +32,11 @@ span {
   position: absolute;
   z-index: 1;
   display: none;
+  border: 1px solid #dddddd;
+  /* border-width: 1px;
   border: solid;
-  border-width: 1px;
+  border-color: #dddddd; */
   border-radius: 4px;
-  border-color: #dddddd;
   background-color: white;
   width: 100%;
   overflow: auto;
