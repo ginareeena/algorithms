@@ -5,3 +5,8 @@
 def square_nums(num_arr)
   num_arr.map{|num| num ** 2}
 end
+
+# write a method that returns a new array with the elements cubed
+def cube_nums(num_arr)
+  num_arr.map{|num| num ** 3}
+end
