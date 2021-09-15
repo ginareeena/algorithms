@@ -1,0 +1,52 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    }
+    
+    .form {
+     font-family: Arial;
+     padding: 5px;
+    }
+    
+    .form input {
+      border-color: #DDDDDD;
+      border-radius: 2px;
+      border-width: 1px;
+      height: 25px;
+      width: 200px;
+      border-style: solid;
+    }
+    
+    .form input#submit {
+    background-color: #9FC8E0;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    height: 38px;
+    width: 100px;
+    border-radius: 2px;
+    }
+
+ul {
+color: red;
+font-family: Arial;
+font-size: 16px;
+}
+
+ul #nameError{
+display: none;
+}
+
+ul #emailError{
+display: none;
+}
+
+ul #passwordError{
+display: none;
+}
+
+ul #confirmError{
+display: none;
+}

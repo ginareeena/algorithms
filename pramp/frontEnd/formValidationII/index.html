@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>title</title>
+    <script defer src="javascript.js"></script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+  </head>
+  <body>
+    <link rel="stylesheet" href="style.css" />
+    
+    <form>
+      <div class= "form">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" required>  
+    </div>
+ 
+    <div class= "form">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>  
+    </div>
+
+    <div class= "form">
+    <label for="password">Password</label>
+    <input type="text" name="password" id="password" minlength= "6" required> 
+    </div>
+      
+    <div class= "form">
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="text" name="confirmPassword" id="confirmPassword" onchange= "validate(e)" required>    
+    </div>
+      
+    <div class= "form">
+    <input id= "submit" type="submit" value="Sign Up" onsubmit="return(validate(e))">    
+    </div> 
+
+    </form>
+    <ul>
+      <li id="nameError">Name is required</li>
+      <li id="emailError">Email is invalid</li>
+      <li id="passwordError">Password must be 6 characters or more</li>
+      <li id="confirmError">Passwords must match</li>
+    </ul>
+    
+    </body>
+</html>
