@@ -1,4 +1,3 @@
-
 //Error messages:
 let nameErrorMsg= document.getElementById("nameError")
 let emailErrorMsg= document.getElementById("emailError")
@@ -6,14 +5,11 @@ let passwordErrorMsg= document.getElementById("passwordError")
 let confirmErrorMsg= document.getElementById("confirmError")
 
 //Input Values:
-let inputName= document.getElementById("name")
-let inputEmail= document.getElementById("email")
-let inputPassword= document.getElementById("password")
-let confirmPassword= document.getElementById("confirmPassword")
 
 //Validation Function
-function validateShort(e){
-e.preventDefault()
+function validateShort(){
+
+// e.preventDefault()
 if (!inputName) nameErrorMsg.style.display= "block"
 if (!inputEmail.includes("@")) emailErrorMsg.style.display= "block"
 if (password.length < 6) passwordErrorMsg.style.display= "block"
@@ -22,24 +18,47 @@ if (confirmPassword !== inputPassword) confirmErrorMsg.style.display= "block"
 
 //wrote this out to test the true false return
 
-function validate(e){
-e.preventDefault()
+const form= document.getElementById("form")
+form.addEventListener("change", validate)
+
+function validate(){
+
+let inputName= document.getElementById("name").value
+let inputEmail= document.getElementById("email").value
+let inputPassword= document.getElementById("password").value
+let confirmPassword= document.getElementById("confirmPassword").value
+    
+console.log("i am running!")
+// e.preventDefault()
+let returnVal = true;
+
 if (!inputName) {
     nameErrorMsg.style.display= "block"
-    return false;
+    returnVal= false
+   } else {
+    nameErrorMsg.style.display= "none"
    }
+
 if (!inputEmail.includes("@")) {
    emailErrorMsg.style.display= "block"
-   return false;
-}
+   returnVal= false
+  } else {
+   emailErrorMsg.style.display= "none"
+   }
+
 if (inputPassword.length < 6) {
     passwordErrorMsg.style.display= "block"
-   return false;
+    returnVal= false
+  } else {
+    passwordErrorMsg.style.display= "none"
 }
+
 if (confirmPassword !== inputPassword) {
    confirmErrorMsg.style.display= "block" 
-  return false;
-}
-  return true;
+   returnVal= false
+} else {
+  confirmErrorMsg.style.display= "none"  
+} 
+  return returnVal
 }
 
