@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>drop down demo</title>
+    <script defer src="dropDown.js"></script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+  </head>
+  <body>
+    <link rel="stylesheet" href="style.css" />
+
+<!-- Drop down here -->
+
+<navbar>
+    <button>Home</button>
+    <button>Contact</button>
+   
+  <span>
+   <button onclick="onDropdownClick()">Dropdown<span id="caret">&#9660</span>
+    </button>
+    <div id="dropdownList">
+         <div>Item</div>
+         <div>Item</div>
+         <div>Item</div>
+       </div>
+    <div id="clickOff" onclick="onClickAway()"></div>
+ </span>
+   
+ </navbar>
+
+
+
+
+  </body>
+</html>
