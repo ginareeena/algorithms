@@ -4,18 +4,17 @@ let emailErrorMsg = document.getElementById("emailError");
 let passwordErrorMsg = document.getElementById("passwordError");
 let confirmErrorMsg = document.getElementById("confirmError");
 
-//this watches the form for changes and runs validate function
+//watches the form for changes and runs validate function
 const form = document.getElementById("form");
 form.addEventListener("change", validate);
 
 function validate() {
-  //inputValues
+  //grabs inputValues
   let inputName = document.getElementById("name").value;
   let inputEmail = document.getElementById("email").value;
   let inputPassword = document.getElementById("password").value;
   let confirmPassword = document.getElementById("confirmPassword").value;
 
-  console.log("i am running!");
   // e.preventDefault()
   let returnVal = true;
 
