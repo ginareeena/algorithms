@@ -4,25 +4,13 @@ let emailErrorMsg= document.getElementById("emailError")
 let passwordErrorMsg= document.getElementById("passwordError")
 let confirmErrorMsg= document.getElementById("confirmError")
 
-//Input Values:
-
-//Validation Function
-function validateShort(){
-
-// e.preventDefault()
-if (!inputName) nameErrorMsg.style.display= "block"
-if (!inputEmail.includes("@")) emailErrorMsg.style.display= "block"
-if (password.length < 6) passwordErrorMsg.style.display= "block"
-if (confirmPassword !== inputPassword) confirmErrorMsg.style.display= "block"  
-}
-
-//wrote this out to test the true false return
-
+//this watches the form for changes and runs validate function
 const form= document.getElementById("form")
 form.addEventListener("change", validate)
 
 function validate(){
 
+//inputValues
 let inputName= document.getElementById("name").value
 let inputEmail= document.getElementById("email").value
 let inputPassword= document.getElementById("password").value
@@ -62,3 +50,13 @@ if (confirmPassword !== inputPassword) {
   return returnVal
 }
 
+//Validation Function shorter version
+function validateShort(){
+
+    // e.preventDefault()
+    if (!inputName) nameErrorMsg.style.display= "block"
+    if (!inputEmail.includes("@")) emailErrorMsg.style.display= "block"
+    if (password.length < 6) passwordErrorMsg.style.display= "block"
+    if (confirmPassword !== inputPassword) confirmErrorMsg.style.display= "block"  
+    }
+    
