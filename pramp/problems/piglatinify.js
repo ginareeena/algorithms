@@ -12,11 +12,16 @@ Output: amazonay
 */
 
 function pigLatinify(word) {
-  let vowels = ["a", "e", "i", "o", "u"]; //check first letter if vowel //return it with 'ay" appending // otherwise we will return the word with that first letter +ay at the end
-  let newWord = "";
+  let vowels = ["a", "e", "i", "o", "u"];
+  //check first letter if vowel
+  //return it with 'ay" appending
+  // otherwise we will return the word with that first letter +ay at the end
+  // let newWord = "";
+
   if (vowels.includes(word[0])) {
     return (word += "ay");
   } else {
+    //return word.slice(1) + word[0] + "ay";
     let newWord = "";
     for (let i = 1; i < word.length; i++) {
       newWord += word[i];
@@ -25,6 +30,17 @@ function pigLatinify(word) {
     return newWord;
   }
 }
+
+// refactor
+
+const vowels = ["a", "e", "i", "o", "u"];
+const pigMe = (word = "") => {
+  if (vowels.includes(word[0])) return `${word}ay`;
+  return `${word.slice(1)}${word[0]}ay`;
+};
+
+console.log(pigMe("amazon"));
+console.log(pigMe("paris"));
 
 console.log(pigLatinify("amazon"));
 console.log(pigLatinify("paris"));
