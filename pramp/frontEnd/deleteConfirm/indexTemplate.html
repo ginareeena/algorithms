@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>title</title>
+    <script defer src="deleteConfirm.js"></script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+  </head>
+  <body>
+    <link rel="stylesheet" href="style.css" />
+    <button onclick="onClick()">Delete</button>
+    <div id="confirmDelete">
+      <div class="confirmWindow">
+      <div class="question">Are you sure you want to delete?</div>
+      <div class="message">This action cannot be undone</div>
+      <div class="buttons">
+        <button class="cancelBtn" onclick= "onCancel()">CANCEL</button><button class="redDeleteBtn" onclick= "onConfirmDelete()">DELETE</button>
+         </div>
+          </div>
+    </div>
+  </body>
+</html>

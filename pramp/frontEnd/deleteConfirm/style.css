@@ -1,0 +1,52 @@
+#confirmDelete {
+    display: none;
+    font-family: Arial;
+    width: 270px;
+  }
+  
+  .confirmWindow{
+  border-radius: 5px;}
+  
+  .question {
+  background-color: #E8E8E8;
+  padding: 17px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .message {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  }
+  
+  .buttons {
+  background-color: #E8E8E8;
+  color: blue;
+  display: flex;
+  justify-content: flex-end;
+  padding: 18px;
+  }
+  
+  .buttons button{
+  border: none;
+  border-radius: 3px;
+  font-family: arial;
+  font-size: 12px;
+  padding: 5px 12px;
+  margin: 5px;
+  }
+  
+  .redDeleteBtn  {
+  background-color: none;
+  background-color: #FF6F50;
+  color: white;
+  
+  }
+  
+  .cancelBtn {
+    background-color: #848484;
+    color: white;
+  }
