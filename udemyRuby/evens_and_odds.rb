@@ -9,4 +9,3 @@ def evens_and_odds(numbers)
  end
 
  p evens_and_odds([1,2,3,4,5,6])
-

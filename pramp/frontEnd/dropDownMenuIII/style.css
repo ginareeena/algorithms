@@ -1,60 +1,59 @@
 #caret {
-    font-size: 12px;}
-    
-    button {
-    border: none;
-    background-color: #F8F8F8;
-    font-size: 16px;
-    font-family: Arial;
-    margin: 0;
-    
-    }
-    
-    navbar {
-      padding: 20px 12px;
-      background-color: #F8F8F8;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      column-gap: 8px;
-    }
-    
-    span{
-     position: relative;
-    }
-    
-    #dropdownList {
-    display: none;
-    border: solid;
-    border-color: #D2D2D2;
-    border-width: 1.5px;
-    border-radius: 3px;
-    position: absolute;
-    width: 100%;
-    z-index: 2;
-    padding: 10px 0px;
-    background-color: white;
-    }
-    
-    #clickOff{
-    background-color: transparent;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-    }
-    
-    #dropdownList div{
-    background-color: white;
-    padding: 10px;
-    font-size: 16px;
-    font-family: Arial;
-    }
-    
-    #dropdownList div:hover {
-    background-color: #F8F8F8;
-    }
-    
+  font-size: 12px;
+}
+
+button {
+  border: none;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  font-family: Arial;
+  margin: 0;
+}
+
+navbar {
+  padding: 20px 12px;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 8px;
+}
+
+span {
+  position: relative;
+}
+
+#dropdownList {
+  display: none;
+  border: solid;
+  border-color: #d2d2d2;
+  border-width: 1.5px;
+  border-radius: 3px;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  padding: 10px 0px;
+  background-color: white;
+}
+
+#clickOff {
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#dropdownList div {
+  background-color: white;
+  padding: 10px;
+  font-size: 16px;
+  font-family: Arial;
+}
+
+#dropdownList div:hover {
+  background-color: #f8f8f8;
+}
