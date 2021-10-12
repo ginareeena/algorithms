@@ -4,7 +4,7 @@
 //are they sorted? no
 
 // Solution using Sort
-// Big O of sort=   O(n * log n) // Terrible!
+// Big O of sort=   O(n * log n)
 
 function maxSubArraySumSort(arr, n) {
   let sortedArr = arr.sort();
