@@ -3,6 +3,8 @@
 //the fib sequence starts with 1 and 1 , where every num after that is equal to the
 //sum of the previous two nums
 
+//112358... etc
+
 function fib(num) {
   // why isn't this <=1 ? why wouldn't 2 return 2?
   if (num <= 2) return 1;
