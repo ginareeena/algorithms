@@ -1,6 +1,5 @@
-// write a function that takes a query and a result
+// write a function that takes a string "query" and a string "result" 
 // and returns the query highlighted if in the result
-
 // highlightedResult("read", "reading is fun")
 // should return "<b>read</b>ing is fun"
 
