@@ -46,30 +46,29 @@
     the return must be the first song of songs.
 */
 function songChain(songs) {
-    // Your code here.
-    // NOTE: You may use print statements for debugging purposes, but you may
-    //       need to remove them for the tests to pass.
-    return []
-  }
-  
-  // DO NOT MODIFY BELOW THIS LINE
-  
-  const readline = require('readline');
-  
-  const rl = readline.createInterface({
-    input: process.stdin,
-  });
-  
-  var songs = [];
-  
-  rl.on('line', (line) => {
-    line = line.trim();
-    if (line == '') return;
-    songs.push(line);
-  }).on('close', () => {
-    result = songChain(songs);
-    for(song of result) {
-      console.log(song);
-    }
-  });
-  
+  // Your code here.
+  // NOTE: You may use print statements for debugging purposes, but you may
+  //       need to remove them for the tests to pass.
+  return [];
+}
+
+// DO NOT MODIFY BELOW THIS LINE
+
+// const readline = require('readline');
+
+// const rl = readline.createInterface({
+//   input: process.stdin,
+// });
+
+// var songs = [];
+
+// rl.on('line', (line) => {
+//   line = line.trim();
+//   if (line == '') return;
+//   songs.push(line);
+// }).on('close', () => {
+//   result = songChain(songs);
+//   for(song of result) {
+//     console.log(song);
+//   }
+// });
