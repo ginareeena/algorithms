@@ -50,14 +50,13 @@
 
 //This is great! The code is much more maintainable, succinct, and readable. But we can do even better! With the new async/await syntax that has been brought into JavaScript, we can remove the use of multiple calls to Promise.then entirely! You will see how this can be achieved in the next section.
 
-// Optimal solution:
-getFishAndChips = async () => {
-  const fish = await fetch(this.fishApiUrl).then((response) => response.json());
+const getFishAndChips = async (fishApiUrl) => {
+  const fish = await fetch(fishApiUrl).then((response) => response.json());
 
   const fishIds = fish.map((fish) => fish.id),
     chipReqOpts = {method: "POST", body: JSON.stringify({fishIds})};
 
-  const chips = await fetch(this.chipsApiUrl, chipReqOpts).then((response) =>
+  const chips = await fetch(chipsApiUrl, chipReqOpts).then((response) =>
     response.json()
   );
 };
